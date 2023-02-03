@@ -1,0 +1,534 @@
+html {
+    scroll-behavior: smooth;
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* STYLE THE NAVIGATION ON SMALLER SCREENS */
+
+.men_image {
+    display: none;      /*Hide men's image*/
+}
+
+.button_wrapper {
+    margin-top: -15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+.button_wrapper button {
+    display: block;
+    padding: 1em 2em 1em;
+    font-weight: bold;
+    font-size: 1em;
+    text-transform: uppercase;
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(128, 128, 128, .5);
+    width: 100%;
+}
+
+.button_wrapper button:first-of-type {
+    border-right: 1px solid rgb(128, 128, 128, .5);
+}
+
+nav figcaption {
+    font-weight: bold;
+    font-size: 1em;
+    padding: .5em;
+    text-transform: uppercase;
+}
+
+nav {
+    width: 260px;
+    position: relative;
+}
+
+li img {
+    height: 100%;            /*This made the menu images to shrink down to fit the space as we want it*/
+    display: block;        
+}
+
+nav li {
+    height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+nav li:not(.button_wrapper) {
+    background-color: rgb(128, 128, 128, .1);
+    margin: 1em;
+}
+
+nav li:nth-child(2) {
+    margin-top: 78px;
+}
+
+#menu_button_close {
+    position: absolute;
+    background-color: black;
+    font-size: 2.5em;
+    color: white;
+    display: block;
+    height: auto;
+    padding: .1em .2em;
+    top: 19%;
+    left: 100%;
+}
+
+
+
+
+/* STYLE THE BODY FOR SMALLER SCREENS */
+
+/* HEADER SECTION */
+.menu {
+    display: none;      /*Hide the buttons that say 'Men' and 'Women' for smaller screens*/
+}
+
+.header_search {        /*Hide the search box for smaller screens*/
+    display: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 1em;
+    border-bottom: 1px solid white;
+}
+
+#menu_button {
+    appearance: none;
+    background: none;
+    border: 0;
+    display: inline-block;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.header_logo h2 {
+    display: inline-block;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: -3px;
+    margin-left: .5em;
+}
+
+.header_icons > * {
+    display: inline-block;
+    color: white;
+    font-size: 1.5em;
+    padding-left: .5em;
+}
+
+
+/* STYLE THE BRAND TEXT THAT FLIPS IN AND OUT */
+.brand_flip_wrap {
+    background-color: black;
+    overflow: hidden;
+}
+
+.brand_flip {
+    display: grid;
+    grid-template-columns: repeat(2, 100%);
+    align-items: center;
+    color: white;
+    left: -100%;          /*This is what will make the other text to show*/
+    position: relative;
+    font-size: 1.1em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    animation: flip_effect 10s linear infinite;
+}
+
+.brand_flip > * {
+    padding: 1em;
+}
+
+.brand_flip small {
+    text-transform: lowercase;
+    display: block;
+}
+
+
+
+/* KEYFRAME TO CAUSE THE FLIPPING EFFECT */
+
+@keyframes flip_effect {
+    0% { left: -100%; }
+    2% { left: -100%; }
+    10% { left: -100%; }
+    20% { left: -100%; }
+    30% { left: -100%; }
+    40% { left: -100%; }
+    42% { left: 0; }
+    50% { left: 0; }
+    60% { left: 0; }
+    70% { left: 0; }
+    90% { left: 0; }
+    98% { left: 0; }
+    100% { left: 100%; }
+}
+
+
+/* STYLE THE BODY THAT HAS THE PICTURE AND TEXT */
+
+picture img {
+    width: 100%;
+}
+
+.picture_siblings p {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    font-size: 2.4em;
+    text-align: center;
+    display: inline-block;
+}
+
+.picture_siblings small {
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-size: 1.4em;
+    display: inline-block;
+}
+
+.picture_siblings a {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: .5em 1em;
+    font-size: 1.2em;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 200px;
+    transition: background-color .3s ease-in, color .2s .1s ease-in;
+}
+
+a.men_link {
+    margin: .5em;
+}
+
+.picture_siblings a:hover {
+    background-color: black;
+    color: white;
+}
+
+
+.picture_siblings div {
+    text-align: center;
+}
+
+.picture_text_wrap {
+    display: grid;
+    align-items: center;
+}
+
+.picture_text_wrap > * {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+
+/* STYLE THE FOOTER SECTION */
+
+footer {
+    margin-top: .5em;
+    background-color: rgba(128, 128, 128, .3);
+    padding: 2em 1em;
+    font-size: .8em;
+}
+footer div {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+}
+
+footer a:first-child {
+    padding-right: .7em;
+    border-right: 1px solid black;
+}
+
+footer a:last-child {
+    padding-left: .7em;
+}
+
+footer small {
+    display: block;
+    margin-top: 1em;
+    border-top: 2px solid black;
+    padding-top: 1em;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+
+/* STYLES TO MAKE THE MENU APPEAR WITH THE BODY */
+
+body {
+    display: grid;
+}
+
+body > * {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+nav {
+    z-index: 10;
+    background-color: white;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: width .3s linear, visibility .1s .3s, height .1s .3s;
+}
+
+nav.open {             /*This controls the width of the nav bar when it is displayed*/
+    width: 260px;
+    height: 100%;           /*NOTE: If you use height: auto;, the transition will not work, so you have to specify a parameter*/
+    visibility: visible;
+    transition: width .3s linear, visibility .1s, height .1s linear;
+}
+
+.open .button_wrapper {
+    width: 250px;
+    overflow: visible;
+}
+
+
+
+/* HIDE THE WOMEN PICTURE WHEN THE MEN BUTTON IS CLICKED */
+.men img {
+    display: block;
+}
+
+.men img:not(.men_image) {             /*THIS HIDES THE WOMEN IMAGES */
+    display: none;
+}
+
+
+
+/* SHOW THE SEARCH BAR WHEN THE SEARCH BUTTON IS CLICKED */
+
+div.header_search {
+    padding-top: 2em;     
+    width: 100%;
+    position: fixed;     /*Position it relative for bigger screens*/
+    background-color: #eee;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 10;
+    display: none;
+}
+
+.header_search input {
+    display: block;
+    width: 100%;
+    border-radius: 40px;
+    height: 40px;
+}
+
+.header_search label {
+    position: absolute;
+    right: 20px;
+    top: 42px;
+    color: gray;
+    font-size: 1.3em;
+}
+
+.header_search input::placeholder {
+    font-size: 1.2em;
+    padding-left: 1em;
+}
+
+.header_search > i {
+    position: absolute;
+    top: 5px;
+    right: 26px;
+    font-size: 1.5em;
+    color: black;
+}
+
+.header_search_show .header_search {
+    display: block;
+}
+
+.black_friday {
+    display: none;      /*Hide the black friday text for smaller screens*/
+}
+
+
+/*INCREASE THE WIDTH OF THE NAV BAR FOR BIGGER SCREENS*/
+@media screen and (min-width: 630px) {
+    nav.open {
+        width: 360px;
+    } 
+
+    .open .button_wrapper {
+        width: 350px;
+    }
+
+    .picture_text_wrap {
+        align-items: flex-start;
+    }
+}
+
+
+@media screen and (min-width: 770px) {
+    /* TAKE OUT THE SEARCH BUTTON AND THE CLOSE BUTTON THAT APPEARS WHEN SEARCH BUTTON IS CLICKED */
+    #magnifyGlass, #SearchClose {
+        display: none;
+    }
+
+
+    /*make the search box appear*/
+    div.header_search {
+        padding-top: 0;
+        width: auto;
+        position: relative;     /*Reverses it from it fixed positioning. We also used 'relative' instead of 'static' bcoz we want the search button to still be positioned relative to it*/
+        background-color: transparent;
+        display: block;
+        z-index: 0;
+    }
+
+    .header_search label {
+        top: 10px;
+    }
+
+    .header_search {
+        flex: 1 1 auto;     /*This makes the search bar which is a flex item to grow and shrink as the window is resized*/
+        margin-left: 1em;
+    }
+
+    .black_friday {
+        display: block;
+        background-color: rgb(38, 224, 102);
+        text-transform: uppercase;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        padding: .5em 1em;
+    }
+
+    .black_friday a {
+        display: block;
+        border: 2px solid black;
+        font-size: 1.2em;
+        text-decoration: none;
+        padding: .2em 0;
+        margin: .5em 0 .5em;
+        width: 100px;
+        text-align: center;
+        color: black;
+        height: auto;
+    }
+
+    .picture_text_wrap {
+        align-items: center;
+    }
+
+
+    /*Make the brand_flip apppear beaneth the picture*/
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .brand_flip_wrap {
+        order: 1;
+        background-color: #2d2d2d;
+    }
+
+    .brand_flip {
+        grid-template-columns: repeat(2, 50%);
+        animation: none;
+        left: 0;
+    }
+
+    .brand_flip p:first-child {
+        order: 1;
+    }
+
+    /*Increase the size of the paragraphs*/
+
+    .picture_siblings p {
+        font-size: 3.8em;
+    }
+
+    .picture_siblings small {
+        font-size: 1.5em;
+    }
+
+    /*Make the links display next to each other*/
+
+    .picture_siblings .link_wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5em;
+    }
+
+    .picture_siblings a {
+        margin: 0;
+    }
+
+    a.men_link {
+        margin-left: 1.4em;
+      }
+}
+
+@media screen and (min-width: 1000px) {
+    .menu {
+        display: block;
+      }
+
+      nav {
+        display: none;
+      }
+
+      #menu_button {
+        display: none;
+      }
+
+      .header_logo button {
+        display: inline-block;
+        font-size: 1.2em;
+        font-weight: bold;
+        appearance: none;
+        background: none;
+        border: 0;
+        color: white;
+        padding: 1em;
+        text-align: center;
+        width: 100px;
+        text-transform: uppercase;
+      }
+}
+
